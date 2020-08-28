@@ -1,0 +1,6 @@
+commonAnnotations:
+  serving: personal-site
+
+resources:
+- deploy.yaml
+- service.yaml
