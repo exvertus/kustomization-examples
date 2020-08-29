@@ -1,5 +1,6 @@
 commonAnnotations:
-  serving: personal-site
+  cloud.space: personal-site
+  cloud.resource.exception: true
 
 resources:
 - deploy.yaml
