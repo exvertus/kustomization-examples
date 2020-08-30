@@ -1,0 +1,18 @@
+
+resources:
+- deploy.yaml
+
+vars:
+  - name: PYTHON_PORT
+    objref:
+      kind: Deployment
+      name: app-mode
+      apiVersion: apps/v1
+    fieldref:
+      fieldpath: spec.template.metadata.labels.port-num
+  - name: APP_LANG
+    objref:
+      kind: Deployment
+      name: app-lang
+      apiVersion: apps/v1
+    # fieldref defaults to metadata.name
