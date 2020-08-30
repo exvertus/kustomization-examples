@@ -1,0 +1,3 @@
+pathesStrategicMerge:
+- deploy-addpy.yaml
+- service-addpy.yaml
