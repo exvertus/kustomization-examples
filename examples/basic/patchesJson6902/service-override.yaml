@@ -1,0 +1,9 @@
+- op: add
+  path: /spec/ports
+  value:
+  - protocol: TCP
+    port: 50000
+    targetPort: 50000
+- op: replace
+  path: /metadata/name/annotations/cloud.resource.exception
+  value: false

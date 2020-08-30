@@ -1,0 +1,10 @@
+pathchesJson6902:
+- target:
+    kind: Deployment
+    name: nginx
+  path: deploy-override.json
+- target:
+    kind: Service
+    name: nginx-service
+  # You may use yaml in the same structure as json.
+  path: service-override.yaml
