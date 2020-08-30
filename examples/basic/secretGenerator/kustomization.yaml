@@ -1,0 +1,11 @@
+# The files referenced here wouldn't normally be in the repo for security.
+configMapGenerator:
+- name: site-tls
+  files:
+  - tls.cert
+  - tls.key
+type: "kubernetes.io/tls"
+- name: env-secret
+  envs:
+  - env.txt
+  type: Opaque
