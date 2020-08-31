@@ -1,5 +1,10 @@
-pathchesJson6902:
+resources:
+- deploy.yaml
+- service.yaml
+
+patchesJson6902:
 - target:
+    version: apps/v1
     kind: Deployment
     name: nginx
   path: deploy-override.json
