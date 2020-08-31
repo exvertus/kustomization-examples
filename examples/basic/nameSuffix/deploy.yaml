@@ -3,8 +3,7 @@ kind: Deployment
 metadata:
   name: nginx
   annotations:
-    # Note this line will be overriden.
-    cloud.space: any
+    cloud-space: any
 spec:
   replicas: 3
   selector:
