@@ -1,0 +1,53 @@
+# Notice this needed different syntax than kustomize build.
+# For more info, see: https://github.com/kubernetes-sigs/kustomize/issues/2205
+apiVersion: v1
+items:
+- apiVersion: v1
+  data:
+    app-args.properties: |-
+      title="My Page"
+      editor="Me"
+    other-args.txt: email="someone@example.org"
+  kind: ConfigMap
+  metadata:
+    annotations:
+      cloud.pod-scaling-limit: "300"
+      kubectl.kubernetes.io/last-applied-configuration: |
+        {"apiVersion":"v1","data":{"app-args.properties":"title=\"My Page\"\neditor=\"Me\"","other-args.txt":"email=\"someone@example.org\""},"kind":"ConfigMap","metadata":{"annotations":{"cloud.pod-scaling-limit":"300"},"labels":{"live-data":"true","safe-for-manual-edit":"false"},"name":"app-args-79k6bcgtg9","namespace":"default"}}
+    labels:
+      live-data: "true"
+      safe-for-manual-edit: "false"
+    name: app-args-79k6bcgtg9
+    namespace: default
+- apiVersion: v1
+  data:
+    LOCALHOST: "False"
+    LOGGING: INFO
+  kind: ConfigMap
+  metadata:
+    annotations:
+      cloud.pod-scaling-limit: "300"
+      kubectl.kubernetes.io/last-applied-configuration: |
+        {"apiVersion":"v1","data":{"LOCALHOST":"False","LOGGING":"INFO"},"kind":"ConfigMap","metadata":{"annotations":{"cloud.pod-scaling-limit":"300"},"labels":{"live-data":"true","safe-for-manual-edit":"false"},"name":"env-options-kmmkt7dk25","namespace":"default"}}
+    labels:
+      live-data: "true"
+      safe-for-manual-edit: "false"
+    name: env-options-kmmkt7dk25
+    namespace: default
+- apiVersion: v1
+  data:
+    JAVA_HOME: /usr/lib/jvm/open-jdk
+    PYTHON_PATH: /usr/lib/python3
+  kind: ConfigMap
+  metadata:
+    annotations:
+      cloud.pod-scaling-limit: "300"
+      kubectl.kubernetes.io/last-applied-configuration: |
+        {"apiVersion":"v1","data":{"JAVA_HOME":"/usr/lib/jvm/open-jdk","PYTHON_PATH":"/usr/lib/python3"},"kind":"ConfigMap","metadata":{"annotations":{"cloud.pod-scaling-limit":"300"},"labels":{"live-data":"true","safe-for-manual-edit":"false"},"name":"paths-mh8bbkmt64","namespace":"default"}}
+    labels:
+      live-data: "true"
+      safe-for-manual-edit: "false"
+    name: paths-mh8bbkmt64
+    namespace: default
+kind: List
+metadata: {}

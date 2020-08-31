@@ -19,18 +19,8 @@ configMapGenerator:
   - app-args.properties
   - other-args.txt
 - name: env-options
-  envs: 
-  - options.env
-  # This will override the global option.
-  options:
-    labels:
-      safe-for-manual-edit: "true"
+  env: options.env
 - name: paths
   literals:
   - PYTHON_PATH=/usr/lib/python3
   - JAVA_HOME=/usr/lib/jvm/open-jdk
-- name: color-scheme
-  options:
-    labels:
-      safe-for-manual-edit: "true"
-      live-data: "false"
