@@ -3,8 +3,7 @@ kind: Service
 metadata:
   name: nginx-service
   annotations:
-    # Should no-op when kustomized 
-    cloud.resource.exception: true
+    cloud-resource-exception: "true"
 spec:
   selector:
     app: nginx

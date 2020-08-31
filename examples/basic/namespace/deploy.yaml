@@ -1,11 +1,10 @@
 apiVersion: apps/v1
 kind: Deployment
-namespace: default
 metadata:
   name: nginx
+  namespace: default
   annotations:
-    # Note this line will be overriden.
-    cloud.space: any
+    cloud-space: any
 spec:
   replicas: 3
   selector:
