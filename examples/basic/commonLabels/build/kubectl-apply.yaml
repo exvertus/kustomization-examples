@@ -1,0 +1,52 @@
+apiVersion: v1
+items:
+- apiVersion: v1
+  kind: Service
+  metadata:
+    annotations:
+      kubectl.kubernetes.io/last-applied-configuration: |
+        {"apiVersion":"v1","kind":"Service","metadata":{"annotations":{},"labels":{"app":"nginx","owner":"carl"},"name":"nginx-service","namespace":"default"},"spec":{"ports":[{"port":80,"protocol":"TCP","targetPort":8080}],"selector":{"app":"nginx","owner":"carl"},"type":"NodePort"}}
+    labels:
+      app: nginx
+      owner: carl
+    name: nginx-service
+    namespace: default
+  spec:
+    ports:
+    - port: 80
+      protocol: TCP
+      targetPort: 8080
+    selector:
+      app: nginx
+      owner: carl
+    type: NodePort
+- apiVersion: apps/v1
+  kind: Deployment
+  metadata:
+    annotations:
+      kubectl.kubernetes.io/last-applied-configuration: |
+        {"apiVersion":"apps/v1","kind":"Deployment","metadata":{"annotations":{},"labels":{"app":"nginx","owner":"carl"},"name":"nginx","namespace":"default"},"spec":{"replicas":3,"selector":{"matchLabels":{"app":"nginx","owner":"carl"}},"template":{"metadata":{"labels":{"app":"nginx","owner":"carl"}},"spec":{"containers":[{"image":"nginx:latest","name":"nginx","ports":[{"containerPort":80}]}]}}}}
+    labels:
+      app: nginx
+      owner: carl
+    name: nginx
+    namespace: default
+  spec:
+    replicas: 3
+    selector:
+      matchLabels:
+        app: nginx
+        owner: carl
+    template:
+      metadata:
+        labels:
+          app: nginx
+          owner: carl
+      spec:
+        containers:
+        - image: nginx:latest
+          name: nginx
+          ports:
+          - containerPort: 80
+kind: List
+metadata: {}
