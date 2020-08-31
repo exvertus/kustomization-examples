@@ -1,6 +1,9 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
 commonAnnotations:
-  cloud.space: personal-site
-  cloud.resource.exception: true
+  cloud-space: personal-site
+  cloud-resource-exception: "true"
 
 resources:
 - deploy.yaml
