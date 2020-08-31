@@ -2,15 +2,16 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: custom-nginx
-spec:
-  replicas: 3
-  selector:
-    matchLabels:
-      app: nginx-cus
-  template:
-    metadata:
-      labels:
-        app: nginx-cus
-    spec:
-      containers:
-      - image: my-images/nginx:latest
+# spec:
+#   replicas: 3
+#   selector:
+#     matchLabels:
+#       app: nginx-cus
+#   template:
+#     metadata:
+#       labels:
+#         app: nginx-cus
+#     spec:
+#       containers:
+#       - name: nginx
+#         image: my-images/nginx:latest
