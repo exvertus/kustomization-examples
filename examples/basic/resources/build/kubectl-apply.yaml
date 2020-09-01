@@ -1,0 +1,1 @@
+# error: rawResources failed to read Resources: Load from path base failed: 'base' must be a file (got d='/home/mrclassandquality/git/kustomization-examples/examples/basic/resources/base')
