@@ -1,6 +1,6 @@
 [
 	{"op": "replace", "path": "/spec/replicas", "value": 5},
 	{"op": "add", "path": "/spec/template/spec/containers", "value": {"name": "python",
-	                                                                  "image": "python:latest",
-	                                                                  "ports": {"containerPort": 50000}}}
+	                                                                   "image": "python:latest",
+	                                                                   "ports": {"containerPort": 50000}}}
 ]

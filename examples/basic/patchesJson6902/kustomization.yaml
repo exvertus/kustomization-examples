@@ -1,14 +1,17 @@
 resources:
-- deploy.yaml
-- service.yaml
+    - deploy.yaml
+    - service.yaml
 
 patchesJson6902:
 - target:
-    version: apps/v1
+    group: apps
+    version: v1
     kind: Deployment
     name: nginx
   path: deploy-override.json
 - target:
+    group: apps
+    version: v1
     kind: Service
     name: nginx-service
   # You may use yaml in the same structure as json.
