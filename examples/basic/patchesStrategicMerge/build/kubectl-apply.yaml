@@ -1,0 +1,3 @@
+# This errors:
+# kubectl apply -k . --dry-run="client" -o yaml > build/kubectl-apply.yaml
+# error: rawResources failed to read Resources: Load from path base failed: 'base' must be a file (got d='/home/mrclassandquality/git/kustomization-examples/examples/basic/patchesStrategicMerge/base')

@@ -1,0 +1,10 @@
+images:
+- name: nginx
+  newName: my-custom-registry/nginx
+  newTag: 1.8.0
+- name: python
+  digest: sha256:1234567890abcdef1234567890abcdef1234567890abcdef123456789
+
+resources:
+- deploy.yaml
+- service.yaml

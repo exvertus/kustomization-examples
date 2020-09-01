@@ -1,0 +1,7 @@
+commonLabels:
+  owner: carl
+  app: nginx
+
+resources:
+- deploy.yaml
+- service.yaml

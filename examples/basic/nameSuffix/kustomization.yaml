@@ -1,0 +1,5 @@
+nameSuffix: -experimental
+
+resources:
+- deploy.yaml
+- service.yaml

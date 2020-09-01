@@ -1,0 +1,12 @@
+# The certificate files referenced here wouldn't normally be in the repo for security reasons.
+# They are only here for clarity in how kustomize behaves.
+secretGenerator:
+- name: site-tls
+  files:
+  - tls.crt
+  - tls.key
+  type: "kubernetes.io/tls"
+- name: env-secret
+  envs:
+  - env.txt
+  type: Opaque

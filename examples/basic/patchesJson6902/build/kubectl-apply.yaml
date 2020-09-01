@@ -1,0 +1,4 @@
+# Note this errors out with:
+# unable to recognize ".": no matches for kind "Service" in version "apps/v1"
+# error validating ".": error validating data: ValidationError(Deployment.spec.template.spec.containers): invalid type for io.k8s.api.core.v1.PodSpec.containers: got "map", expected "array"; if you choose to ignore these errors, turn validation o
+# ff with --validate=false

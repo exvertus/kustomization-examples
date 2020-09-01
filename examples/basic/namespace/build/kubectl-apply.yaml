@@ -1,0 +1,45 @@
+apiVersion: v1
+items:
+- apiVersion: v1
+  kind: Service
+  metadata:
+    annotations:
+      cloud-resource-exception: "true"
+      kubectl.kubernetes.io/last-applied-configuration: |
+        {"apiVersion":"v1","kind":"Service","metadata":{"annotations":{"cloud-resource-exception":"true"},"name":"nginx-service","namespace":"my-namespace"},"spec":{"ports":[{"port":80,"protocol":"TCP","targetPort":8080}],"selector":{"app":"nginx"},"type":"NodePort"}}
+    name: nginx-service
+    namespace: my-namespace
+  spec:
+    ports:
+    - port: 80
+      protocol: TCP
+      targetPort: 8080
+    selector:
+      app: nginx
+    type: NodePort
+- apiVersion: apps/v1
+  kind: Deployment
+  metadata:
+    annotations:
+      cloud-space: any
+      kubectl.kubernetes.io/last-applied-configuration: |
+        {"apiVersion":"apps/v1","kind":"Deployment","metadata":{"annotations":{"cloud-space":"any"},"name":"nginx","namespace":"my-namespace"},"spec":{"replicas":3,"selector":{"matchLabels":{"app":"nginx"}},"template":{"metadata":{"labels":{"app":"nginx"}},"spec":{"containers":[{"image":"nginx:latest","name":"nginx","ports":[{"containerPort":8080}]}]}}}}
+    name: nginx
+    namespace: my-namespace
+  spec:
+    replicas: 3
+    selector:
+      matchLabels:
+        app: nginx
+    template:
+      metadata:
+        labels:
+          app: nginx
+      spec:
+        containers:
+        - image: nginx:latest
+          name: nginx
+          ports:
+          - containerPort: 8080
+kind: List
+metadata: {}

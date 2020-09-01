@@ -1,0 +1,34 @@
+apiVersion: apps/v1
+kind: Service
+metadata:
+  annotations:
+    cloud-resource-exception: "false"
+  name: nginx-service
+spec:
+  ports:
+  - port: 80
+    protocol: TCP
+    targetPort: 8080
+  selector:
+    app: nginx
+  type: NodePort
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx
+spec:
+  replicas: 5
+  selector:
+    matchLabels:
+      app: nginx
+  template:
+    metadata:
+      labels:
+        app: nginx
+    spec:
+      containers:
+        image: python:latest
+        name: python
+        ports:
+          containerPort: 50000

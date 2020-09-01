@@ -1,0 +1,5 @@
+namePrefix: my-
+
+resources:
+- deploy.yaml
+- service.yaml

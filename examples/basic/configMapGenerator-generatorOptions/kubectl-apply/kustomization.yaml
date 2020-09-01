@@ -1,0 +1,26 @@
+# Note this version will work with kustomize build, but not kubectl apply -k.
+
+# These labels and annotations are global and added to each config map.
+generatorOptions:
+  labels:
+    live-data: "true"
+    safe-for-manual-edit: "false"
+  annotations:
+    cloud.pod-scaling-limit: "300"
+  # If the next line was uncommented, it will override any local options set below.
+  # disableNameSuffixHash: true
+
+configMapGenerator:
+- name: app-args
+  # create is the default behavior. merge and replace require and existing ConfigMap.
+  behavior: create
+  # Specify files with key=value pairs.
+  files:
+  - app-args.properties
+  - other-args.txt
+- name: env-options
+  env: options.env
+- name: paths
+  literals:
+  - PYTHON_PATH=/usr/lib/python3
+  - JAVA_HOME=/usr/lib/jvm/open-jdk

@@ -1,0 +1,2 @@
+# Fails due to this bug:
+# https://github.com/kubernetes-sigs/kustomize/issues/1069

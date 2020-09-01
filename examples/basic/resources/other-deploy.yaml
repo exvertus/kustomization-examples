@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-debug
+  annotations:
+    cloud.space: nginx-debug
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nginx
+  template:
+    metadata:
+      labels:
+        app: nginx
+    spec:
+      containers:
+      - name: nginx-debug
+        image: my-lib/nginx-debug
+        ports:
+        - containerPort: 8080
