@@ -3,7 +3,5 @@ kind: Service
 metadata:
   name: nginx-service
 spec:
-  ports:
-  - protocol: TCP
-    port: 50000
-    targetPort: 50000
+  selector:
+    app: nginy

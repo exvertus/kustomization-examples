@@ -1,3 +1,6 @@
-pathesStrategicMerge:
+resources:
+    - base
+
+patchesStrategicMerge:
 - deploy-addpy.yaml
 - service-addpy.yaml
