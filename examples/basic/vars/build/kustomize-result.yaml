@@ -1,9 +1,9 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: python
   annotations:
     cloud-space: any
+  name: python
 spec:
   replicas: 3
   selector:
@@ -16,11 +16,15 @@ spec:
         port-num: "51462"
     spec:
       containers:
-      - name: python
+      - command:
+        - python
+        - my-app
+        - --port
+        - "51462"
+        env:
+        - name: APP_LANG
+          value: python
         image: python:latest
-        command: ["python", "my-app", "--port", "$(PYTHON_PORT)"]
+        name: python
         ports:
         - containerPort: 51462
-        env:
-          - name: APP_LANG
-            value: $(APP_LANG)
