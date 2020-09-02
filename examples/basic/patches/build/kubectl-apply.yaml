@@ -1,3 +1,1 @@
-# Using kubectl apply -k resulted in an error:
 # error: json: cannot unmarshal object into Go struct field Kustomization.patchesStrategicMerge of type patch.StrategicMerge
-# For more details, see here: https://github.com/kubernetes-sigs/kustomize/issues/2390
